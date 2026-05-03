@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080808;
+  color: #F5F5F5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .gold-text {
+    @apply text-gold-500;
+  }
+
+  .gold-border {
+    @apply border-gold-500/40;
+  }
+
+  .card {
+    @apply bg-surface-700 border border-surface-500 rounded-2xl;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-400 text-black font-semibold
+           px-6 py-3 rounded-xl transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply border border-surface-500 hover:border-gold-500/60
+           text-white/70 hover:text-white
+           px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-600 border border-surface-500
+           focus:border-gold-500/60 focus:outline-none
+           rounded-xl px-4 py-3 text-white placeholder-white/30
+           transition-colors duration-200;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
