@@ -47,9 +47,58 @@ body {
            rounded-xl px-4 py-3 text-white placeholder-white/30
            transition-colors duration-200;
   }
+
+  .shadow-gold {
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.18), 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .bg-gold-500\/8 {
+    background-color: rgba(201, 168, 76, 0.08);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Landing page animations */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.animate-fadein {
+  animation: fadein 0.7s ease-out both;
+}
+
+.animate-fadein-slow {
+  animation: fadein 0.9s ease-out 0.15s both;
+}
+
+.animate-fadein-slower {
+  animation: fadein 1s ease-out 0.3s both;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #111; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+/* Radial gradient utility for match modal */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
